@@ -1,0 +1,6 @@
+{
+  "name": "IronClad Industrial Roofing",
+  "description": "Engineered commercial & residential roofing systems, structural inspections, storm recovery, and architectural metal roofing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

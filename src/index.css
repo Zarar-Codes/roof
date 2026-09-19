@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Material You (MD3) Design Tokens - Purple/Violet Seed #6750A4 */
+    --md-surface: #FFFBFE;
+    --md-on-surface: #1C1B1F;
+    --md-primary: #6750A4;
+    --md-on-primary: #FFFFFF;
+    --md-primary-container: #EADDFF;
+    --md-on-primary-container: #21005D;
+    --md-secondary: #625B71;
+    --md-on-secondary: #FFFFFF;
+    --md-secondary-container: #E8DEF8;
+    --md-on-secondary-container: #1D192B;
+    --md-tertiary: #7D5260;
+    --md-on-tertiary: #FFFFFF;
+    --md-tertiary-container: #FFD8E4;
+    --md-on-tertiary-container: #31111D;
+    --md-surface-container: #F3EDF7;
+    --md-surface-container-high: #ECE6F0;
+    --md-surface-container-highest: #E6E0E9;
+    --md-surface-container-low: #E7E0EC;
+    --md-outline: #79747E;
+    --md-outline-variant: #CAC4D0;
+    --md-on-surface-variant: #49454F;
+    --md-error: #BA1A1A;
+    --md-on-error: #FFFFFF;
+    --md-error-container: #FFDAD6;
+    --md-on-error-container: #410002;
+    --md-success: #2E7D32;
+    --md-success-container: #C8E6C9;
+
+    /* Legacy mapping fallback */
+    --color-chassis: #FFFBFE;
+    --color-raised: #F3EDF7;
+    --color-recessed: #E7E0EC;
+    --color-text-primary: #1C1B1F;
+    --color-text-muted: #49454F;
+    --color-accent: #6750A4;
+    --color-accent-fg: #FFFFFF;
+    --color-border-shadow: #E7E0EC;
+    --color-border-highlight: #FFFFFF;
+    --color-deep-shadow: #E8DEF8;
+    --color-dark-panel: #21005D;
+    --color-dark-tech: #1D192B;
+  }
+
+  body {
+    background-color: var(--md-surface);
+    color: var(--md-on-surface);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Material Design 3 Easing and Elevation Transitions */
+.md-transition {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Material You Elevation Surfaces */
+.md-card {
+  background-color: var(--md-surface-container);
+  border-radius: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.md-card:hover {
+  box-shadow: 0 4px 12px -2px rgba(103, 80, 164, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
+  transform: scale(1.015);
+}
+
+.md-card-flat {
+  background-color: var(--md-surface-container);
+  border-radius: 24px;
+}
+
+/* Material 3 Filled Text Field */
+.md-input-filled {
+  height: 56px;
+  background-color: #E7E0EC;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 2px solid #79747E;
+  color: #1C1B1F;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+  outline: none;
+  width: 100%;
+}
+
+.md-input-filled:focus {
+  border-bottom-color: #6750A4;
+  background-color: #ECE6F0;
+  box-shadow: 0 1px 0 0 #6750A4;
+}
+
+/* Material 3 Filled Text Area */
+.md-textarea-filled {
+  background-color: #E7E0EC;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 2px solid #79747E;
+  color: #1C1B1F;
+  padding: 14px 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+  outline: none;
+  width: 100%;
+}
+
+.md-textarea-filled:focus {
+  border-bottom-color: #6750A4;
+  background-color: #ECE6F0;
+  box-shadow: 0 1px 0 0 #6750A4;
+}
+
+/* Material You Pill Buttons */
+.md-btn-primary {
+  background-color: #6750A4;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 3px rgba(103, 80, 164, 0.2);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+}
+.md-btn-primary:hover {
+  background-color: rgba(103, 80, 164, 0.9);
+  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
+}
+.md-btn-primary:active {
+  transform: scale(0.95);
+  background-color: rgba(103, 80, 164, 0.8);
+}
+
+.md-btn-tonal {
+  background-color: #E8DEF8;
+  color: #1D192B;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+}
+.md-btn-tonal:hover {
+  background-color: rgba(232, 222, 248, 0.85);
+  box-shadow: 0 2px 8px rgba(103, 80, 164, 0.15);
+}
+.md-btn-tonal:active {
+  transform: scale(0.95);
+}
+
+.md-btn-outlined {
+  background-color: transparent;
+  color: #6750A4;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: 1px solid #79747E;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+}
+.md-btn-outlined:hover {
+  background-color: rgba(103, 80, 164, 0.08);
+  border-color: #6750A4;
+}
+.md-btn-outlined:active {
+  transform: scale(0.95);
+  background-color: rgba(103, 80, 164, 0.15);
+}
+
+.md-btn-ghost {
+  background-color: transparent;
+  color: #6750A4;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+}
+.md-btn-ghost:hover {
+  background-color: rgba(103, 80, 164, 0.08);
+}
+.md-btn-ghost:active {
+  transform: scale(0.95);
+}
+
+/* Material 3 Floating Action Button (FAB) */
+.md-fab {
+  background-color: #7D5260;
+  color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.15);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.md-fab:hover {
+  box-shadow: 0 8px 20px 4px rgba(125, 82, 96, 0.35);
+  transform: scale(1.05);
+}
+.md-fab:active {
+  transform: scale(0.95);
+}
+
+/* Material 3 Chips */
+.md-chip {
+  background-color: #E8DEF8;
+  color: #1D192B;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.md-chip-accent {
+  background-color: rgba(103, 80, 164, 0.12);
+  color: #6750A4;
+  border: 1px solid rgba(103, 80, 164, 0.25);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Legacy helper aliases mapped to MD3 */
+.neu-card {
+  background-color: #F3EDF7;
+  border-radius: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+.neu-card:hover {
+  box-shadow: 0 4px 12px -2px rgba(103, 80, 164, 0.12);
+}
+
+.neu-card-raised {
+  background-color: #F3EDF7;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px -2px rgba(103, 80, 164, 0.1);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+.neu-card-raised:hover {
+  transform: scale(1.015);
+  box-shadow: 0 8px 24px -4px rgba(103, 80, 164, 0.18);
+}
+
+.neu-floating {
+  background-color: #F3EDF7;
+  border-radius: 28px;
+  box-shadow: 0 8px 24px -4px rgba(103, 80, 164, 0.18);
+}
+
+.neu-recessed {
+  background-color: #E7E0EC;
+  border-radius: 16px;
+}
+
+.btn-industrial-primary {
+  background-color: #6750A4;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(103, 80, 164, 0.25);
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-industrial-primary:hover {
+  background-color: rgba(103, 80, 164, 0.9);
+  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.35);
+}
+.btn-industrial-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-industrial-secondary {
+  background-color: #E8DEF8;
+  color: #1D192B;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  transition: all 300ms cubic-bezier(0.2, 0, 0, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-industrial-secondary:hover {
+  background-color: rgba(232, 222, 248, 0.8);
+  box-shadow: 0 2px 8px rgba(103, 80, 164, 0.12);
+}
+.btn-industrial-secondary:active {
+  transform: scale(0.95);
+}
+
+.glow-accent {
+  box-shadow: 0 0 16px 3px rgba(103, 80, 164, 0.35);
+}
